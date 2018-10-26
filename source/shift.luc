@@ -1,0 +1,24 @@
+module shift (
+    input alufn[6],
+    input a[8],
+    input b[8],
+    output c[8],
+    output f[2]
+  ) {
+
+  always {
+    f = 2b1;
+    c = 8b1;
+    case (alufn[1:0]) {
+      b00:
+        f = 2b0;
+        c = a << b[3:0];
+      b01:
+        f = 2b0;
+        c = a >> b[3:0];
+      b11:
+        f = 2b0;
+        c = $signed(a) >>> b[3:0];
+    }
+  }
+}

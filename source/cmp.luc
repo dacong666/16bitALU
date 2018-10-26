@@ -1,0 +1,25 @@
+module cmp (
+    input alufn[6],
+    input z,
+    input v,
+    input n,
+    output c[8],
+    output f[2]
+  ) {
+
+  always {
+    c = 16b0;
+    f = 2b1;
+    case (alufn[1:0]) {
+      b01:
+        f = 2b0;
+        c[0] = z;
+      b10:
+        f = 2b0;
+        c[0] = (n ^ v);
+      b11:
+        f = 2b0;
+        c[0] = z | (n ^ v) ;
+    }
+  }
+}

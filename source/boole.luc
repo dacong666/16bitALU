@@ -1,0 +1,32 @@
+module boole (
+    input alufn[6],
+    input a[8],
+    input b[8],
+    output c[8],
+    output f[2]
+  ) {
+  var n;
+  var in;
+
+  always {
+    f = 2b1;
+    c = 16b0;
+    for (n=0; n<8; n++) {
+      in = c{a[n],b[n]};
+      case (in) {
+        2b00:
+          f = 2b0;
+          c[n] = alufn[0];
+        2b01:
+          f = 2b0;
+          c[n] = alufn[1];
+        2b10:
+          f = 2b0;
+          c[n] = alufn[2];
+        2b11:
+          f = 2b0;
+          c[n] = alufn[3];
+      }
+    }
+  }
+}

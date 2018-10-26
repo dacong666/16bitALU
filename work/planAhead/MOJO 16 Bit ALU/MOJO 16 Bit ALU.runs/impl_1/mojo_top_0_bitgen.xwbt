@@ -1,0 +1,8 @@
+INTSTYLE=pa
+INFILE=D:\Documents\mojo\MOJO 16 Bit ALU\work\planAhead\MOJO 16 Bit ALU\MOJO 16 Bit ALU.runs\impl_1\mojo_top_0_routed.ncd
+OUTFILE=D:\Documents\mojo\MOJO 16 Bit ALU\work\planAhead\MOJO 16 Bit ALU\MOJO 16 Bit ALU.runs\impl_1\mojo_top_0.bit
+FAMILY=Spartan6
+PART=xc6slx9-2tqg144
+WORKINGDIR=D:\Documents\mojo\MOJO 16 Bit ALU\work\planAhead\MOJO 16 Bit ALU\MOJO 16 Bit ALU.runs\impl_1
+LICENSE=WebPack
+USER_INFO=211595654_0_0_674

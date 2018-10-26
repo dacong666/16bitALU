@@ -1,0 +1,36 @@
+module add (
+    input alufn[6],
+    input a[8],
+    input b[8],
+    output c[8],
+    output z,
+    output v,
+    output n,
+    output f[2]
+  ) {
+  sig sum[8];
+
+  always {
+    c=16b0;
+    z=0;
+    v=0;
+    n=0;
+    f=2b1;
+    sum = 8b0;
+    case (alufn[0]) {
+      b0:
+        sum = a+b;
+        f=2b0;
+      b1:
+        sum = a-b;
+        f=2b0;
+      default:
+        sum = 8b0;
+        f = 2b0;
+    }
+    c = sum;
+    z = ~|sum;
+    v = (a[7] & b[7] & (~sum[7])) | ((~a[7]) & (~b[7]) & sum[7]);
+    n = sum[7];
+  }
+}
